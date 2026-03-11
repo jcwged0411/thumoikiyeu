@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="tm.css">
+<title>Thư mời</title>
+</head>
+
+<body>
+
+<img id="envelope" class="shake img-close" src="envelop-close.png">
+
+<script>
+const img = document.getElementById("envelope");
+let state = 0;
+
+img.classList.add("shake");
+
+img.addEventListener("click", function() {
+
+state = (state + 1) % 3;
+
+img.className = "";
+void img.offsetWidth;
+
+img.classList.add("fade-transition");
+
+if (state === 1) {
+    img.src = "envelop-open.png";
+    img.classList.add("img-open");
+} 
+else if (state === 2) {
+    img.src = "letter.png";
+    img.classList.add("img-letter");
+} 
+else {
+    img.src = "envelop-close.png";
+    img.classList.add("shake","img-close");
+}
+
+});
+</script>
+
+</body>
+</html>
